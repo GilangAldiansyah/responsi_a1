@@ -1,5 +1,5 @@
-import 'package:responsi_a1/side_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:responsi_a1/side_menu.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,7 +11,28 @@ class HomePage extends StatelessWidget {
         title: const Text('Home Page'),
       ),
       drawer: const SideMenu(),
-      body: const Center(child: Text('Selamat Datang di Dunia Ikan')),
+      body: Stack(
+        children: <Widget>[
+          Center(
+            child: Text(
+              'Selamat Datang di Dunia Ikan',
+              style: TextStyle(
+                fontSize: 24, // Ubah ukuran font sesuai yang Anda inginkan
+              ),
+            ),
+          ),
+          Positioned(
+            top: 70,
+            left: 0,
+            right: 0,
+            child: Image.asset(
+              'images/ikan.png',
+              width: 200,
+              height: 200,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
