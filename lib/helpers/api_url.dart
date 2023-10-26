@@ -1,5 +1,5 @@
 class ApiUrl {
-  static const String baseUrl = 'http:/localhost:8080/toko-api/public';
+  static const String baseUrl = 'https://responsi1a.dalhaqq.xyz';
 
   static const String listIkan = baseUrl + '/ikan';
   static const String createIkan = baseUrl + '/ikan';
@@ -8,7 +8,7 @@ class ApiUrl {
     return baseUrl + '/ikan/' + id.toString() + '/update';
   }
 
-  static String showIkan(int id) {
+  static String getIkan(int id) {
     return baseUrl + '/ikan/' + id.toString();
   }
 
