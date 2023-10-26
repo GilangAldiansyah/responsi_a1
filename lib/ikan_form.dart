@@ -50,12 +50,12 @@ class _ikanFormState extends State<ikanForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(judul), // Judul yang dinamis
+        title: Text(judul),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0, top: 20.0),
             child: Text(
-              'Created by : Gilang', // Teks "designed by" yang tetap
+              'Created by : Gilang',
               style: TextStyle(fontSize: 12, color: Colors.white),
             ),
           ),
@@ -147,10 +147,8 @@ class _ikanFormState extends State<ikanForm> {
           if (validate) {
             if (!_isLoading) {
               if (widget.ikan != null) {
-                //kondisi update produk
                 ubah();
               } else {
-                //kondisi tambah produk
                 simpan();
               }
             }
