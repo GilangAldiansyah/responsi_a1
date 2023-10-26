@@ -158,30 +158,6 @@ class _ikanFormState extends State<ikanForm> {
         });
   }
 
-  simpan() {
-    setState(() {
-      _isLoading = true;
-    });
-    Ikan createIkan = Ikan(id: null);
-    createIkan.nama = _namaTextboxController.text;
-    createIkan.jenis = _jenisTextboxController.text;
-    createIkan.warna = _warnaTextboxController.text;
-    createIkan.habitat = _habitatTextboxController.text;
-    IkanBloc.addIkan(ikan: createIkan).then((value) {
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: (BuildContext context) => const ListData()));
-    }, onError: (error) {
-      showDialog(
-          context: context,
-          builder: (BuildContext context) => const WarningDialog(
-                description: "Simpan gagal, silahkan coba lagi",
-              ));
-    });
-    setState(() {
-      _isLoading = false;
-    });
-  }
-
   ubah() {
     setState(() {
       _isLoading = true;
@@ -200,6 +176,30 @@ class _ikanFormState extends State<ikanForm> {
           context: context,
           builder: (BuildContext context) => const WarningDialog(
                 description: "Permintaan ubah data gagal, silahkan coba lagi",
+              ));
+    });
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
+  simpan() {
+    setState(() {
+      _isLoading = true;
+    });
+    Ikan createIkan = Ikan(id: null);
+    createIkan.nama = _namaTextboxController.text;
+    createIkan.jenis = _jenisTextboxController.text;
+    createIkan.warna = _warnaTextboxController.text;
+    createIkan.habitat = _habitatTextboxController.text;
+    IkanBloc.addIkan(ikan: createIkan).then((value) {
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (BuildContext context) => const ListData()));
+    }, onError: (error) {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) => const WarningDialog(
+                description: "Simpan gagal, silahkan coba lagi",
               ));
     });
     setState(() {

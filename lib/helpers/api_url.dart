@@ -5,7 +5,7 @@ class ApiUrl {
   static const String createIkan = baseUrl + '/ikan';
 
   static String updateIkan(int id) {
-    return baseUrl + '/ikan/' + id.toString() + '/update';
+    return baseUrl + '/ikan/' + id.toString();
   }
 
   static String getIkan(int id) {
